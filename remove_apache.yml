@@ -7,7 +7,7 @@
   - name: install apache2 package
     apt:
       name: apache2
-      state: latest
+      state: absent
 
   - name: update repository index
     apt:
@@ -17,4 +17,4 @@
   - name: install jcal package instead of libapache2-mod-php
     apt:
       name: jcal
-      state: latest
+      state: absent
