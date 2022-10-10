@@ -4,17 +4,10 @@
   become: true
   tasks:
 
-  - name: install apache2 package
-    apt:
-      name: apache2
+  - name: install apache and jcal packages and update repository
+    package:
+      name:
+         - "{{apache_package }}"
+         - "{{jcal_package }}"
       state: latest
-
-  - name: update repository index
-    apt:
       update_cache: yes
-      
-
-  - name: install jcal package instead of libapache2-mod-php
-    apt:
-      name: jcal
-      state: latest
