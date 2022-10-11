@@ -1,17 +1,8 @@
-- name: install httpd server package ( CentOS)
+- name: install apache2 server package ( Ubuntu and CentOS)
   tags: always
-  dnf:
-    name: httpd
+  package:
+    name: "{{ apache_package_name }}"
     state: latest
-  when: ansible_distribution == "CentOS"
-
-
-- name: install apache2 server package ( Ubuntu)
-  tags: always
-  apt:
-    name: apache2
-    state: latest
-  when: ansible_distribution == "Ubuntu"
 
 
 - name: copy file
