@@ -1,0 +1,22 @@
+--- 
+
+- hosts: all
+  become: true
+  roles:
+    - base
+
+
+- hosts: workstation
+  become: true
+  roles:
+    - workstation
+
+- hosts: web_servers
+  become: true
+  roles:
+    - web_servers
+
+- hosts: file_servers
+  become: true
+  roles:
+    - file_servers

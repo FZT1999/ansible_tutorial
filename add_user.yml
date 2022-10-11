@@ -1,0 +1,28 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: add fatemeh_acount
+    tags: always
+    user:
+      name: fatemeh
+      groups: zahra
+
+  - name: add ssh_key for fatemeh
+    tags: always
+    authorized_key:
+      user: fatemeh
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAvotEtTkdsqyZSqefYe0i36zYlL9suqWljHoip68EsO zahra@zahra-HP-ProBook-4520s"
+
+  - name: add sudoers file for fatemeh
+    tags: always
+    copy:
+      src: sudoer_fatemeh
+      dest: /etc/sudoers.d/fatemeh
+      owner: root
+      group: root
+      mode: 0440
+
+     

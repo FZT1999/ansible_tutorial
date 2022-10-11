@@ -1,0 +1,6 @@
+- name: add ssh_key for fatemeh
+  tags: always
+  authorized_key:
+    user: fatemeh
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAvotEtTkdsqyZSqefYe0i36zYlL9suqWljHoip68EsO zahra@zahra-HP-ProBook-4520s"
+

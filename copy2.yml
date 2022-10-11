@@ -1,0 +1,14 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: copy link
+    copy: 
+      src: dirty
+      dest: /home/zahra/dirty
+      owner: root
+      group: root
+      mode: 644
+

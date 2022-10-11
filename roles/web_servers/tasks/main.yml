@@ -1,0 +1,23 @@
+- name: install httpd server package ( CentOS)
+  tags: always
+  dnf:
+    name: httpd
+    state: latest
+  when: ansible_distribution == "CentOS"
+
+
+- name: install apache2 server package ( Ubuntu)
+  tags: always
+  apt:
+    name: apache2
+    state: latest
+  when: ansible_distribution == "Ubuntu"
+
+
+- name: copy file
+  copy:
+    src: default_site.html
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: 0644
